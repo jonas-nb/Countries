@@ -8,10 +8,14 @@ const Card = (props) => {
     <div
       className={`${
         stateDarkMode ? 'bg-[#1c2a34]' : 'bg-white'
-      } m-auto flex items-center card w-[20rem] drop-shadow-md `}
+      } m-auto flex items-center card w-[20rem] drop-shadow-md h-[30rem]`}
     >
       <div className="min">
-        <img src={props.flag} alt={props.title} />
+        <img
+          className="h-full object-cover"
+          src={props.flag}
+          alt={props.title}
+        />
       </div>
       <div className="card-body">
         <h1 className="card-title">{props.title}</h1>

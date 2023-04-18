@@ -89,13 +89,13 @@ const Page = () => {
         </div>
         <div>
           <h1 className="text-xl mt-10">Border Countries:</h1>
-          <div className="flex  items-start gap-5 flex-wrap flex-row p-2 drop-shadow-lg">
+          <div className="flex justify-center place-content-start gap-5 flex-wrap flex-row p-2 drop-shadow-lg">
             {data.borders ? (
               borderCountries.map((country) => (
                 <p
                   className={`${
                     stateDarkMode === true ? 'bg-[#1c2a34]' : 'bg-white'
-                  } p-2 MyBtn font-thin drop-shadow-lg `}
+                  } p-2  MyBtn font-thin drop-shadow-lg w-56`}
                   key={country.alpha3Code}
                 >
                   {country.name}

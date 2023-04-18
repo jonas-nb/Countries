@@ -38,48 +38,51 @@ const Container = () => {
           : 'bg-white border-none'
       } border-t  h-full`}
     >
-      <div
-        className={`${
-          stateDarkMode === true ? 'bg-[#1c2b35]' : 'bg-white'
-        } relative left-3 mt-5 flex items-center w-11/12 drop-shadow-md py-2 pr-10 pl-4
+      <div className="flex lg:w-10/12 lg:m-auto justify-between">
+        <div
+          className={`${
+            stateDarkMode === true ? 'bg-[#1c2b35]' : 'bg-white'
+          } relative left-3 mt-5 flex items-center lg:justify-around w-11/12 lg:w-96 drop-shadow-md py-2 pr-10 pl-4
         rounded-md text-gray-800  focus:outline-none
         focus:border-blue-500 `}
-      >
-        <FiSearch
-          className={`${
-            stateDarkMode === true ? 'text-white' : 'text-[#0d1114]'
-          }`}
-        />
-        <input
-          id="procura"
-          type="text"
-          placeholder="Search for a country..."
-          className={`${
-            stateDarkMode === true ? 'bg-[#1c2a34] text-white' : 'bg-white'
-          } w-full outline-none ml-5`}
-          value={searchValue}
-          onChange={(event) => setSearchValue(event.target.value)}
-        />
-      </div>
-      <div>
-        <select
-          className={`${
-            stateDarkMode === true ? 'bg-[#1d2d38] text-white' : 'bg-white'
-          } relative left-3 mt-5 flex items-center w-8/12 h-16 drop-shadow-md py-2 pr-10 pl-4
-          rounded-md text-gray-800  focus:outline-none`}
-          id="region-select"
-          value={selectedRegion}
-          onChange={handleRegionChange}
         >
-          <option value="">Selecione uma região</option>
-          {regions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
+          <FiSearch
+            className={`${
+              stateDarkMode === true ? 'text-white' : 'text-[#0d1114]'
+            }`}
+          />
+          <input
+            id="procura"
+            type="text"
+            placeholder="Search for a country..."
+            className={`${
+              stateDarkMode === true ? 'bg-[#1c2a34] text-white' : 'bg-white'
+            } w-full outline-none ml-5`}
+            value={searchValue}
+            onChange={(event) => setSearchValue(event.target.value)}
+          />
+        </div>
+        <div>
+          <select
+            className={`${
+              stateDarkMode === true ? 'bg-[#1d2d38] text-white' : 'bg-white'
+            } relative left-3 mt-5 flex items-center w-8/12 h-16 drop-shadow-md py-2 pr-10 pl-4
+          rounded-md text-gray-800  focus:outline-none`}
+            id="region-select"
+            value={selectedRegion}
+            onChange={handleRegionChange}
+          >
+            <option value="">Selecione uma região</option>
+            {regions.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <div className="flex flex-col mt-10 gap-10">
+
+      <div className="flex flex-col md:grid md:grid-cols-2 mt-10 gap-10">
         {/* retorna um filtro para escolha de continentes, sendo que quando selectRegion não tiver o valor, mostra tudo */}
         {api
           .filter(
