@@ -28,6 +28,13 @@ const App = () => {
         <Route path="/" element={<Container />} />
         <Route path="/:slug" element={<Page />} />
       </Routes>
+      <div
+        className={`${
+          stateDarkMode === true ? 'bg-[#15242b] text-white' : 'bg-white'
+        } w-full flex justify-around items-center drop-shadow-lg pt-5 pb-5`}
+      >
+        With for love by Jonas Batista
+      </div>
     </div>
   );
 };

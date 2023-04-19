@@ -28,7 +28,6 @@ const Container = () => {
     .filter(({ name }) =>
       name.toLowerCase().includes(searchValue.toLowerCase())
     );
-  console.log(filteredCountries);
 
   return (
     <div
@@ -36,12 +35,12 @@ const Container = () => {
         stateDarkMode === true
           ? 'bg-[#15242b] border-[#15242b] text-white'
           : 'bg-white border-none'
-      } border-t  h-full`}
+      } border-t  h-full pb-5`}
     >
-      <div className="flex lg:w-10/12 lg:m-auto justify-between">
+      <div className="lg:flex lg:w-10/12 lg:m-auto justify-between">
         <div
           className={`${
-            stateDarkMode === true ? 'bg-[#1c2b35]' : 'bg-white'
+            stateDarkMode === true ? 'bg-[#1c2a34]' : 'bg-white'
           } relative left-3 mt-5 flex items-center lg:justify-around w-11/12 lg:w-96 drop-shadow-md py-2 pr-10 pl-4
         rounded-md text-gray-800  focus:outline-none
         focus:border-blue-500 `}
@@ -66,13 +65,13 @@ const Container = () => {
           <select
             className={`${
               stateDarkMode === true ? 'bg-[#1d2d38] text-white' : 'bg-white'
-            } relative left-3 mt-5 flex items-center w-8/12 h-16 drop-shadow-md py-2 pr-10 pl-4
+            } relative left-3 lg:left-0 mt-5 flex items-center w-8/12 lg:w-80 h-16 drop-shadow-md py-2 pr-10 pl-4
           rounded-md text-gray-800  focus:outline-none`}
             id="region-select"
             value={selectedRegion}
             onChange={handleRegionChange}
           >
-            <option value="">Selecione uma região</option>
+            <option value="">Filter by Region</option>
             {regions.map((region) => (
               <option key={region} value={region}>
                 {region}
@@ -82,7 +81,7 @@ const Container = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:grid md:grid-cols-2 mt-10 gap-10">
+      <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 mt-10 gap-10">
         {/* retorna um filtro para escolha de continentes, sendo que quando selectRegion não tiver o valor, mostra tudo */}
         {api
           .filter(

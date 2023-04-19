@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { My_Context } from '../Context';
-
+import './style.css';
 const Card = (props) => {
   let { stateDarkMode } = useContext(My_Context);
 
@@ -8,29 +8,33 @@ const Card = (props) => {
     <div
       className={`${
         stateDarkMode ? 'bg-[#1c2a34]' : 'bg-white'
-      } m-auto flex items-center card w-[20rem] drop-shadow-md h-[30rem]`}
+      } w-64 h-[28rem] m-auto myShadowCard`}
     >
-      <div className="min">
+      <div className="m-auto">
         <img
-          className="h-full object-cover"
+          className="h-full object-cover m-auto"
           src={props.flag}
           alt={props.title}
         />
       </div>
-      <div className="card-body">
-        <h1 className="card-title">{props.title}</h1>
-        <div className={stateDarkMode === true ? 'text-white' : 'text-black'}>
+      <div className="p-5 mt-5 font-extralight">
+        <h1 className="text-lg font-bold">{props.title}</h1>
+        <div
+          className={`${
+            stateDarkMode === true ? 'text-white' : 'text-black'
+          } mt-5`}
+        >
           <p>
-            <span className="font-semibold">Population: </span>
+            <span className="">Population: </span>
             {props.population.toLocaleString()}
           </p>
           <p>
-            <span className="font-semibold">Region: </span>
+            <span className="">Region: </span>
             {props.region === ' ' ? 'does not exist' : props.region}
           </p>
 
           <p>
-            <span className="font-semibold">Capital: </span>
+            <span className="">Capital: </span>
             {props.capital === undefined
               ? 'The country does not have an officially designated capital'
               : props.capital}
