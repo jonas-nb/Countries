@@ -1,0 +1,5 @@
+.myShadowCard {
+  -webkit-box-shadow: -3px 3px 40px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px 3px 40px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: -3px 3px 40px -18px rgba(0, 0, 0, 0.75);
+}
